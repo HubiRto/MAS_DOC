@@ -145,6 +145,7 @@ class Person {
 ## Asocjacje
 
 - ### Skierowana
+![](https://github.com/user-attachments/assets/6f6061d5-95e2-4bd0-8cb8-b4f74ce64bdf)
 ```java
 //  Company <----- Person
 class Company { 
@@ -158,6 +159,7 @@ class Person {
 ```
 
 - ### Rekurencyjna
+![](https://github.com/user-attachments/assets/bb3c0197-5c51-4d25-91fd-8321c1228788)
 ```java
 class Person {
     private List<Person> parents = new ArrayList<>();
@@ -166,6 +168,7 @@ class Person {
 ```
 
 - ### Zwykła
+![](https://github.com/user-attachments/assets/a4942547-5fd7-4c4e-a8d2-e61661b05a30)
 ```java
 class X {
     private List<Y> yy = new HashSet<>();
@@ -178,6 +181,7 @@ class Y {
 ```
 
 - ### Z atrybutem
+![](https://github.com/user-attachments/assets/3fb7bd7a-8b2a-43db-ba77-43f7bb8f2642)
 ```java
 class Student  {
     private List<StudentCourse> ref;
@@ -197,7 +201,7 @@ class StudentCourse {
 ```
 
 - ### Kwalifikowana
-![ss](https://github.com/user-attachments/assets/08a751e5-d972-4492-a7a7-586edec94201)
+![](https://github.com/user-attachments/assets/08a751e5-d972-4492-a7a7-586edec94201)
 ```java
 class Book {
     private String isbn;
@@ -213,6 +217,7 @@ class Library {
 ```
 
 - ### Agregacja (słaba całość-część – część może istnieć niezależnie) - jak asocjacja zwykła
+![](https://github.com/user-attachments/assets/e5073823-a81c-42d3-86e2-ba0ab4e628ba)
 ```java
 class Team {
     private Set<Player> players = new HashSet<>();
@@ -224,13 +229,19 @@ class Player {
 ```
 
 - ### Kompozycja (silna całość-część – część nie istnieje bez całości)
+![](https://github.com/user-attachments/assets/51445e0c-d15b-4c29-900d-9c56416cd6c7)
 ```java
 class Budynek {
     private Set<Pokój> pokoje = new HashSet<>();
-}
 
-class Pokój {
-    private Pokój pokój; // Nigdy nie może być == null aż do końca istnienia siebie lub budynku
+    public Budynek stworzBudynek(int numer) {
+        Pokoj pokoj = new Pokoj(numer);
+        return new Budynek(pokoj);
+    }
+
+    static class Pokój {
+        private int numer;
+    }
 }
 ```
 
@@ -261,8 +272,6 @@ class BankTransferPayment extends Payment {
     }
 }
 ```
-
-![xd](https://64.media.tumblr.com/tumblr_m93uaqMjbD1qmtheto1_1280.gifv)
 
 - ### Dziedziczenie overlapping (nie ma settera, ale może być kilka)
 ```java
