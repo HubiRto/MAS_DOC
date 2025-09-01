@@ -343,6 +343,7 @@ class Truck {
 ```
 
 - ### Wielo-aspektowe
+![](https://github.com/user-attachments/assets/a986d2b4-e836-4116-b76a-ab717c15083b)
 ```java
 // Zwykłe dziedziczenie
 class Person {
