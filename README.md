@@ -197,6 +197,7 @@ class StudentCourse {
 ```
 
 - ### Kwalifikowana
+![ss](https://github.com/user-attachments/assets/08a751e5-d972-4492-a7a7-586edec94201)
 ```java
 class Book {
     private String isbn;
